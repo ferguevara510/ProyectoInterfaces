@@ -198,6 +198,13 @@ verdeBajo = np.array([36, 100, 20], np.uint8)
 verdeAlto = np.array([70, 255, 255], np.uint8)
 
 font = cv2.FONT_HERSHEY_SIMPLEX
+
+if os.path.exists('inicio.mp3'):
+  playsound('inicio.mp3')
+else:
+  tts = gTTS('Hola, coloca las tarjetas frente la cámara', lang='es-us')
+  tts.save('inicio.mp3')
+  playsound('inicio.mp3')
 while True:
 
   ret,frame = cap.read()
